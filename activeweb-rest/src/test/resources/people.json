@@ -1,0 +1,46 @@
+[
+    {
+        "first_name": "Marylin",
+        "last_name": "Monroe",
+        "addresses": [
+            {
+                "address_type": "residential",
+                "address1": "123 Pine St",
+                "address2": "Apt 3",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60606"
+            },
+            {
+                "address_type": "shipping",
+                "address1": "135 S LaSalle St",
+                "address2": "",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60604"
+            }
+        ]
+    },
+    {
+        "first_name": "John",
+        "last_name": "Kennedy",
+        "addresses": [
+            {
+                "address_type": "residential",
+                "address1": "456 Pine St",
+                "address2": "Apt 5",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60606"
+            },
+            {
+                "address_type": "shipping",
+                "address1": "200 N LaSalle St",
+                "address2": "",
+                "city": "Chicago",
+                "state": "IL",
+                "zip": "60604"
+            }
+        ]
+    }
+]

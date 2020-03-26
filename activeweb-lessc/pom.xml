@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.javalite</groupId>
+    <artifactId>activeweb-lessc</artifactId>
+    <packaging>war</packaging>
+    <version>1.1-SNAPSHOT</version>
+    <name>ActiveWeb Example using Bootstrap and Lessc</name>
+
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.17.v20190418</version>
+                <configuration>
+                    <httpConnector>
+                        <port>8080</port>
+                    </httpConnector>
+
+                    <systemProperties>
+                        <systemProperty>
+                            <name>active_reload</name>
+                            <value>true</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>activeweb.log.request</name>
+                            <value>true</value>
+                        </systemProperty>
+                    </systemProperties>
+
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun</groupId>
+                        <artifactId>tools</artifactId>
+                        <version>1.8.0</version>
+                        <scope>system</scope>
+                        <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.javalite</groupId>
+                <artifactId>activeweb-lessc-maven-plugin</artifactId>
+                <version>2.3.2-j8</version>
+                <configuration>
+                    <lesscMain>${basedir}/src/main/webapp/less/bootstrap.less</lesscMain>
+                    <targetDirectory>${basedir}/target/web</targetDirectory>
+                    <targetFileName>bootstrap.css</targetFileName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>activeweb</artifactId>
+            <version>2.3.2-j8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>activeweb-testing</artifactId>
+            <version>2.3.2-j8</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.8.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+    </dependencies>
+</project>

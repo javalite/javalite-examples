@@ -1,0 +1,23 @@
+
+plugins {
+    id "java"
+    id "de.schablinski.activejdbc-gradle-plugin" version "1.5.2"
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+
+dependencies {
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+    compile group: 'org.javalite', name: 'activejdbc', version: '2.3.2-j8'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.5'
+    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+}
+
+task run(dependsOn: 'build', type: JavaExec) {
+    main = 'activejdbc.examples.simple.SimpleExample'
+    classpath = sourceSets.main.runtimeClasspath
+}

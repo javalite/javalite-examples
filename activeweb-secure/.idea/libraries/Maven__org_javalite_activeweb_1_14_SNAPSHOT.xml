@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: org.javalite:activeweb:1.14-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/javalite/activeweb/1.14-SNAPSHOT/activeweb-1.14-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/javalite/activeweb/1.14-SNAPSHOT/activeweb-1.14-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/javalite/activeweb/1.14-SNAPSHOT/activeweb-1.14-SNAPSHOT-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../activeweb/activeweb/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

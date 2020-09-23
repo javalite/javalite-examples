@@ -9,7 +9,5 @@ public class RequestContextFilter extends AppControllerFilter {
     @Override
     public void before() {
         Context.put("request_id", UUID.randomUUID().toString());
-
-        System.out.println("executing: " + this);
     }
 }

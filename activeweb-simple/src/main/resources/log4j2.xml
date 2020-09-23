@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" packages="org.javalite.logging" name="ActiveWeb-Simple" strict="true">
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="${appender-name}"/>
+        </Root>
+    </Loggers>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <JsonLog4j2Layout dateFormat="yyyy-MM-dd HH:mm:ss.SSS"/>
+        </Console>
+        <RollingFile name="FILE"
+                     ignoreExceptions="false"
+                     fileName="${sys:app.home}/logs/activeweb-simple.log"
+                     filePattern="${sys:app.home}/logs/activeweb-simple-%d{MM-dd-yyyy}.log.gz">
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy/>
+            <JsonLog4j2Layout dateFormat="yyyy-MM-dd HH:mm:ss.SSS"/>
+        </RollingFile>
+    </Appenders>
+</Configuration>

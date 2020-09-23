@@ -7,7 +7,8 @@ target/
 
 .idea/*
 
-./*/.idea/*
+
+**/.idea/*
 
 
 # Package Files #

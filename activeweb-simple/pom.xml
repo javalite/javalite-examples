@@ -10,7 +10,7 @@
 
     <properties>
         <environments>test,development</environments>
-        <javalite.version>2.3.3-j8-SNAPSHOT</javalite.version>
+        <javalite.version>2.5-j8</javalite.version>
     </properties>
 
     <profiles>

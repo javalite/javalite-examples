@@ -9,7 +9,9 @@
     <name>Cucumber-JSpec Example</name>
 
 
-
+    <properties>
+        <javalite.version>2.5-j8</javalite.version>
+    </properties>
 
 
     <dependencies>
@@ -37,7 +39,7 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>javalite-common</artifactId>
-            <version>2.3.2-j8</version>
+            <version>${javalite.version}</version>
         </dependency>
     </dependencies>
 

@@ -8,9 +8,10 @@
     <version>1.1-SNAPSHOT</version>
     <name>ActiveWeb Example using Bootstrap</name>
 
+    <properties>
+        <javalite.version>2.5-j8</javalite.version>
+    </properties>
 
-
-    
     <build>
         <plugins>
             <plugin>
@@ -71,12 +72,12 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb</artifactId>
-            <version>2.3.2-j8</version>
+            <version>${javalite.version}</version>
         </dependency>
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb-testing</artifactId>
-            <version>2.3.2-j8</version>
+            <version>${javalite.version}</version>
             <scope>test</scope>
         </dependency>
 

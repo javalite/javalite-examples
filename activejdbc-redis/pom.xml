@@ -11,6 +11,9 @@
         as a dependency to your project</description>
 
 
+    <properties>
+        <javalite.version>2.5-j8</javalite.version>
+    </properties>
 
 
     <build>
@@ -29,7 +32,7 @@
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>activejdbc-instrumentation</artifactId>
-                <version>2.3.2-j8</version>
+                <version>${javalite.version}</version>
                 <executions>
                     <execution>
                         <phase>process-classes</phase>
@@ -60,7 +63,7 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activejdbc</artifactId>
-            <version>2.3.2-j8</version>
+            <version>${javalite.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>opensymphony</groupId>

@@ -12,14 +12,8 @@
 
     <properties>
         <javalite.version>2.5-j8</javalite.version>
-    </properties>
-
-
-
-    <properties>
         <environments>development.test,development</environments>
     </properties>
-
 
     <build>
         <plugins>

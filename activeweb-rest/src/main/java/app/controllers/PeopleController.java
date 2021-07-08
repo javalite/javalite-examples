@@ -3,12 +3,12 @@ package app.controllers;
 import app.models.Address;
 import app.models.Person;
 import app.util.JsonHelper;
-import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.RESTful;
 import org.javalite.common.Util;
+import org.javalite.json.JSONList;
+import org.javalite.json.JSONMap;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,17 +23,19 @@ public class PeopleController extends APIController {
         render().contentType("application/json");
     }
 
-    public void create() throws IOException {
-        Map[] people = JsonHelper.toMaps(Util.read(getRequestInputStream()));
-        for (Map personMap : people) {
-            Person p = new Person();
-            p.fromMap(personMap);
-            p.saveIt();
-            List<Map> addresses  = (List<Map>) personMap.get("addresses");
-            for (Map addressMap : addresses) {
+    public void create(PeopleRequest peopleRequest)  {
+        JSONList people  = peopleRequest.getList("people");
+
+        for (int i = 0; i < people.size(); i++) {
+            JSONMap personMap = people.getMap(i);
+            Person person = new Person();
+            person.fromMap(personMap).saveIt();
+            JSONList addresses  =  personMap.getList("addresses");
+            for (int j = 0; j < addresses.size(); j++) {
+                JSONMap addressMap = addresses.getMap(j);
                 Address address = new Address();
                 address.fromMap(addressMap);
-                p.add(address);
+                person.add(address);
             }
         }
         view("message", "successfully created people and addresses", "code", 200);

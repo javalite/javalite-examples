@@ -10,7 +10,7 @@ import static org.javalite.common.Collections.map;
 public class CatchAllFilter extends HttpSupportFilter {
     @Override
     public void onException(Exception e) {
-        if(e.getCause() instanceof org.codehaus.jackson.JsonParseException){
+        if(e.getMessage().contains("JSON")){
             render("/people/message", map("message", "malformed JSON format", "code", 500));
         }else{
             // this is an exception thrown from any controller on purpose.

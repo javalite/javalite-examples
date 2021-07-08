@@ -46,6 +46,7 @@ Explore an individual person:
 * **Models are simple**: [src/main/java/app/models](src/main/java/app/models). Only the Person model
 has a method `getAddresses()`, otherwise no methods
 * **RESTful controller uses automatic routes**: [PeopleController.java](src/main/java/app/controllers/PeopleController.java)
+* **Controller uses automatic JSON  parsing and validation**: [PeopleController.java](src/main/java/app/controllers/PeopleController.java)
 * **Exceptional conditions handled outside business logic**: [CatchAllFilter.java](src/main/java/app/controllers/CatchAllFilter.java)
 * **JSON is generated using powerful templating**: with partials and children - [people views](src/main/webapp/WEB-INF/views/people/)
 * **Tests expect certain JSON structure and data**: [PeopleControllerSpec.java](src/test/java/app/controllers/PeopleControllerSpec.java)

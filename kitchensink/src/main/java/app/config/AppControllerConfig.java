@@ -30,10 +30,7 @@ public class AppControllerConfig extends AbstractControllerConfig {
 
     public void init(AppContext context) {
 
-        HeadersLogFilter headersLogger = new HeadersLogFilter();
-        context.set("headersLogger", headersLogger);
-        
-        add( new CSRFFilter(), new StatisticsFilter(), headersLogger);
+
         add(new DBConnectionFilter()).to(PostsController.class, RpostsController.class, PeopleController.class);
     }
 }

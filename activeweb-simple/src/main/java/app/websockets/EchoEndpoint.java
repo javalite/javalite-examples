@@ -2,6 +2,8 @@ package app.websockets;
 
 import org.javalite.activeweb.websockets.AppEndpoint;
 
+import javax.websocket.CloseReason;
+
 /**
  * Spring testing example:
  *
@@ -13,14 +15,18 @@ public class EchoEndpoint extends AppEndpoint {
     @Override
     public void onMessage(String message) {
         try{
-            System.out.println("---------------------");
-            sendMessage(greeting6() + message + " and the count: " + counter++);
+            sendMessage(greeting6() + ", and the message:  " +  message + " and the count: " + counter++);
         }catch(Exception e){
             e.printStackTrace();
         }
     }
 
     public String greeting6(){
-        return "You sent me again!!!: ";
+        return "Name from HTTP session:   " + getHttpSession().getAttribute("name");
+    }
+
+    @Override
+    public void onClose(CloseReason closeReason) {
+        logInfo("Wahwah, closing for:  " + getHttpSession().getAttribute("name"));
     }
 }

@@ -8,11 +8,11 @@ https://stackoverflow.com/questions/68520767/activejdbc-migrator-force-to-create
 
 If you are running the PostgreSQL in docker for the first time execute: 
 
-    docker run --name postgresql-container -p 5432:5432 -e POSTGRES_PASSWORD=somePassword -d postgre
+    docker run --name javalite-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 
 If you want to restart the container: 
 
-    docker  container start postgresql-container
+    docker container start  some-postgres
 
 In order to connect to the DB from a command line, execute this:
 

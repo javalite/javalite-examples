@@ -26,8 +26,6 @@ import org.javalite.activeweb.controller_filters.HeadersLogFilter;
 public class HomeController extends AppController {
 
     public void index(){
-        //how to disable logging of headers at run time:
-        appContext().get("headersLogger", HeadersLogFilter.class).logAtLevel(AbstractLoggingFilter.Level.DISABLED);
     }
 
     public void wrapped() {

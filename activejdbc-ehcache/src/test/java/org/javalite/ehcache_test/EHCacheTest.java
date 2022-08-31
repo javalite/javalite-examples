@@ -28,16 +28,15 @@ import static org.javalite.test.jspec.JSpec.a;
 /**
  * @author Igor Polevoy
  */
-public class EHCacheSpec {
+public class EHCacheTest {
 
     @Before
     public void before() {
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/activejdbc", "root", "p@ssw0rd");
+        Base.open("com.mysql.cj.jdbc.Driver", "jdbc:mysql://localhost:3308/ehcache?serverTimezone=CST", "root", "p@ssw0rd");
         Base.exec("delete from people");
         for (int i = 0; i < 100; i++) {
             Person.create("name", "name: " + i, "last_name", "last_name: " + i, "dob", "1935-12-06").saveIt();
         }
-
     }
 
     @After

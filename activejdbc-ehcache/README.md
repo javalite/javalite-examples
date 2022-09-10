@@ -6,10 +6,10 @@
 
 ## Step 1 Install MySQL Docker 
 
-Pull down and start the MySQL Docker container
+Start the MySQL Docker container
 
 ```
-./scripts/install-run.sh
+docker-compose up
 ```
 
 ## Step 2 Create a table 

@@ -4,7 +4,7 @@
 > Note: All scripts are to be executed from the project directory. If you are using Windows, 
 > just execute commands found inside these script files.
 
-## Step 1 Install MySQL Docker 
+## Step 1 Start MySQL Docker container
 
 Start the MySQL Docker container
 

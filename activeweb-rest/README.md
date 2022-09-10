@@ -10,7 +10,7 @@ Provides an example CRUD REST service using [JavaLite](http://javalite.io) techn
 
 ### create databases:
 
-You need to do this only once. Foe more information see [Database migrations](http://javalite.io/database_migrations). 
+You need to do this only once. For more information see [Database migrations](http://javalite.io/database_migrations). 
 
 ```
 mvn db-migrator:create

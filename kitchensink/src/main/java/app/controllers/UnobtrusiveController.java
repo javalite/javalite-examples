@@ -18,15 +18,50 @@ package app.controllers;
 
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.DELETE;
+import org.javalite.activeweb.annotations.GET;
 import org.javalite.activeweb.annotations.POST;
 import org.javalite.activeweb.annotations.PUT;
+
+import java.util.Map;
 
 /**
  * @author Igor Polevoy
  */
 public class UnobtrusiveController extends AppController {
-    public void index() {}
+    @GET
+    @SuppressWarnings("unchecked")
+    public void index() {
+        Map<String, String> params = session().get("flasher", Map.class);
+        if (params != null) {
+            view(params);
+        }
+    }
 
+    @GET
+    public void doSimpleGet() {
+        redirect2index("GET");
+    }
+    @POST
+    public void doSimplePost() {
+        redirect2index("POST");
+    }
+    @PUT
+    public void doSimplePut() {
+        redirect2index("PUT");
+    }
+    @DELETE
+    public void doSimpleDelete() {
+        redirect2index("DELETE");
+    }
+
+    private void  redirect2index(String method) {
+        Map<String, String> params = params1st();
+        params.put("result", "this is  " + method + ", data: " + params);
+        flash(params);
+        redirect();
+    }
+
+    @GET
     public void doGet() {
         respond("this is  GET, data: " + params());
     }

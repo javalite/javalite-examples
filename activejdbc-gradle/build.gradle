@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
-    implementation group: 'org.javalite', name: 'activejdbc', version: '2.6-j8'
+    implementation group: 'org.javalite', name: 'activejdbc', version: '3.4-j11'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.5'
     testImplementation group: 'junit', name: 'junit', version: '4.8.2'
 }

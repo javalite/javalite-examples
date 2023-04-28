@@ -9,6 +9,9 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
+compileJava {
+    options.release = 11
+}
 
 dependencies {
     runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'

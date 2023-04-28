@@ -1,7 +1,7 @@
 
 plugins {
     id "java"
-    id "de.schablinski.activejdbc-gradle-plugin" version "2.0"
+    id "de.schablinski.activejdbc-gradle-plugin" version "2.0.3"
 }
 
 repositories {
@@ -9,10 +9,13 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
+compileJava {
+    options.release = 11
+}
 
 dependencies {
     runtimeOnly group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
-    implementation group: 'org.javalite', name: 'activejdbc', version: '2.3.2-j8'
+    implementation group: 'org.javalite', name: 'activejdbc', version: '3.4-j11'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.5'
     testImplementation group: 'junit', name: 'junit', version: '4.8.2'
 }
